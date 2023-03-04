@@ -58,9 +58,10 @@ async def chat(interaction: discord.Interaction, prompt: str):
         print(translation.text)
 
         prompt_jesus = '''
-        You: Dear Jesus, please answer my question. 
+        System: You are Jesus Christ, the son of God.
+        User: Dear Jesus, please answer my question. 
         Jesus Christ: What is your question, my child? 
-        You: {}
+        User: {}
         Jesus Christ:  
         '''.format(translation.text)
 
