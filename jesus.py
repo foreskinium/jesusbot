@@ -87,8 +87,9 @@ async def chat(interaction: discord.Interaction, prompt: str):
         final_response = "{user}: {prompt}\n\n**{response}**".format(user=interaction.user.mention, prompt=prompt, response=response_text_translated.text)
 
         print("####################")
-
-        await interaction.followup.send(final_response)
+        embed = discord.Embed(title=f"🙏  {prompt}", description=f"```{response_text_translated.text}```", color=0x36393F)
+        await interaction.followup.send(embed=embed)
+        #await interaction.followup.send(final_response)
 
     except Exception as e:
         print("Error:", e)
